@@ -22,8 +22,8 @@ jobs:
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v5
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: AKIA5YG7G6BNHYJBRC4C
+          aws-secret-access-key: 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
           aws-region: us-east-1
 
       - name: Login to ECR
@@ -35,6 +35,6 @@ jobs:
           context: frontend
           path: frontend/Dockerfile
           push: true
-          tags: 615299766984.dkr.ecr.us-east-1.amazonaws.com/dev/frontend:${{ github.run_number }}
+          tags: 945360924762.dkr.ecr.us-east-1.amazonaws.com/dev/frontend:${{ github.run_number }}
           build-args: |
             REACT_APP_API_BASE_URL=${{ secrets.API_BASE_URL }}
